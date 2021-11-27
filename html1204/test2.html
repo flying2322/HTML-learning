@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type='text/javascript' src='js/jquery-3.3.1.min.js'></script>
+		
+		<style>
+			.ke{
+				color:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='java'> 快速入门篇 </div>
+		<div class='java'> 高级语法篇 </div>
+		<div class='java'> 安卓入门篇 </div>
+		<div class='java'> 安卓高级篇 </div>
+		<div class='java'> 网站高级篇 </div>
+		<div class='java'> JavaFX入门篇 </div>
+		<div class='java'> JavaFX高级篇 </div>
+		<div class='java'> 数据库篇 </div>
+		<div class='java'> 网页基础篇 </div>
+		<div class='java'> 网站入门篇 </div>
+		<div class='java'> 网页高级篇 </div>
+		<div>
+			<button onclick='test()'> 测试 </button>
+		</div>
+	</body>
+	
+	<script>
+		function test(){
+			var kecheng = $(".java"); //选中了所有calss=‘java’的元素
+			kecheng.addClass("ke"); //对所有元素操作，修改目标对象的class属性
+		}
+	</script>
+</html>

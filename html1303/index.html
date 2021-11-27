@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		
+		<style>
+			/* 全窗口背景 ： 指定left top right bottom*/
+			.af-dialog{
+				display: none; /*默认隐藏*/
+				position: fixed;
+				z-index: 1000; /*确保遮罩住所有后面的元素*/
+				left:0px;
+				top: 0px;
+				right: 0px;
+				bottom: 0px;
+				background-color: rgba(128,128,128,0.5);/*半透明背景色，除老IE之外均支持*/
+			}
+			
+			/*前景：对话框窗口*/
+			.af-dialog .frame{
+				position: relative;
+				width: 350px;
+				min-height: 150px;
+				margin: 150px auto;/* 居中显示 */
+				background-color: #fff;
+				border-radius: 2px;
+				border: 1px solid #ccc;
+				box-shadow: 1px 1px 3px #aaa;
+				
+			}
+			
+			/* 右上角的关闭按钮，绝对定位*/
+			.af-dialog .close{
+				position:absolute;
+				top:0px;
+				right:0px;
+				border:1px solid #fff;
+			}
+			
+			.af-dialog .close:hover{
+				border: 1px solid #ccc;
+			}
+			
+			/*用户自定义内容区*/
+			.af-dialog .content{
+				width: 100%;
+				text-align:center;
+				margin: 50px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<button onclick='test1()'> 显示对话框 </button>
+		</div>
+		
+		<!--对话框定义 -->
+		<div id='mydlg' class='af-dialog'>
+			<div class='frame'>
+				<img class='close' src='img/ic_close.png'>
+				<div class='content'>
+					Af-Dialog 对话框显示！
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script>
+		function test1()
+		{
+			showDialog("#mydlg");
+		}
+		
+		/*可以传一个jQuery对象，也可以传一个字符串*/
+		window.showDialog = function(selector)
+		{
+			var dlg = selector;
+			if(selector.constructor == String)
+				dlg = $(selector);
+			
+			//点击关闭时，关闭对话框
+			$(".close", dlg).click(function(){
+				dlg.hide(); //Closure 闭包
+			});
+			
+			dlg.show();
+		}
+	</script>
+</html>

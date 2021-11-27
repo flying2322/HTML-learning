@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js" ></script>
+		
+		<style>
+			.main{
+				width: 400px;
+				height: 200px;
+				border: 1px solid #ccc;
+				margin: 50px auto;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='main'>
+			<div id='a1'> 1号 </div>
+			<div class='a2'> 2号 </div>
+		</div>	
+		
+	</body>
+	
+	<script>
+		// ID选择器 
+		var a1 = $("#a1").html();
+		
+		// class 选择器
+		var a2 = $(".a2").html();
+		
+		console.log(a1 + "," + a2);
+	</script>
+</html>

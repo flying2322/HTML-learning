@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		
+		<style>
+			
+			/* 头像框 */
+			.thumb{
+				position: relative;
+				width: 150px;
+				height: 150px;
+				}
+				/* 头像框 / 图像*/
+				.thumb img{
+					width: 100%;
+					height: 100%;
+				}
+				
+			/* 头像框 /下方遮罩层 */
+			.thumb .mask{
+				display: none;
+				position:absolute;
+				width: 100%;
+				height: 30px;
+				bottom: 0px;
+				background-color: #fff8; /*半透明*/
+			}
+			
+			/* 头像框 / 下方遮罩层  按钮*/
+			.thumb .mask button{
+				width: 50%;
+				height: 100%;
+				box-sizing: border-box;
+				background-color: #fff0; /*透明*/
+				border: 1px solid #aaa;
+			}
+			.thumb .mask button:hover{
+				color:darkblue;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class='thumb' onmouseenter="$('.mask',this).fadeIn()"
+			onmouseleave="$('.mask',this).fadeOut()">
+			
+			<img src='img/thumb.jpg' />
+			<div class='mask'>
+				<button> 重新上传 </button><button> 删除 </button>
+			</div>
+		</div>
+	</body>
+</html>

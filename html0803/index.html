@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			table{
+				border-collapse: collapse; /*边线收缩*/
+				table-layout: fixed; /*自动布局还是固定宽度*/
+				word-break: break-all;/*换行设定*/
+				word-wrap: break-word;/*换行折断设定*/
+			}
+			
+			table,td,th{
+				padding: 10ps;
+				text-align: center;
+			}
+			
+			tr.head{
+				border: 0px solid #aaa;
+				border-width: 2px 0px;
+			}
+			
+			tr.data{
+				border:0px solid #ccc;
+				border-width: 1px 0px;
+			}
+			
+			/* 列宽设定 */
+			table{
+				width: 100%;
+			}
+			table  .c1 { width: 80px; }
+			table  .c2 { width: 120px; }
+			table  .c3 { width: 60px; }
+			table  .c4 { width: 150px; }
+			table  .c5 { 
+				width: calc(100% - 80px - 120px - 60px - 150px);
+				 text-align: left;
+				 }
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr class='head'>
+				<th class='c1'> 学号 </th>
+				<th class='c2'> 姓名 </th>
+				<th class='c3'> 性别 </th>
+				<th class='c4'> 手机号 </th>
+				<th class='c5'> 地址 </th>
+			</tr>
+			
+			<tr class='data'>
+				<td> 20180001 </td>
+				<td> 赵1111111111111111111111 </td>
+				<td> 女 </td>
+				<td> 180100000001 </td>
+				<td class='c5'> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+			</tr>
+			<tr class='data'>
+				<td> 20180002 </td>
+				<td> 杨 </td>
+				<td> 男 </td>
+				<td> 180100000002 </td>
+				<td class='c5'> bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</td>
+			</tr>
+			<tr class='data'>
+				<td> 20180003 </td>
+				<td> 李 </td>
+				<td> 女 </td>
+				<td> 180100000003 </td>
+				<td class='c5'> cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</td>
+			</tr>
+			
+		</table>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+
+/* 诗的标题 */
+.poem-title
+{
+	font-size: 28px;
+	text-align: center;
+	color: #444;
+}
+
+/* 诗的正文 */
+.poem-content
+{
+	font-size: 24px;
+	font-family: "隶书";
+	text-align: center;
+	color: #444;
+}

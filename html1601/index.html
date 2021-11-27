@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type='text/javascript' src='js/jquery-3.3.1.min.js'></script>
+		<script type='text/javascript' src='layer/layer.js'></script>
+		
+		<style>
+			.main{
+				margin: 20px;
+			}
+			
+			input, textarea, select{
+				padding: 4px;
+				border-radius: 4px;
+				border: 1px solid #ccc;
+				outline: none;
+				tab-size: 4;
+			}
+			
+			button{
+				padding: 4px 8px;
+				outline: none;
+				background-color: #fcfcfc;
+				border-radius: 4px;
+				border: 1px solid #ccc;
+				padding: 6px 12px;
+			}
+			
+			.primary{
+				display: inline-block;
+				background-color: #4285F4;
+				color: #fcfcfc;
+				border-radius: 4px;
+				border-width: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='main'>
+			<button onclick='test1()'>弹出对话框</button>
+		</div>
+		
+		<!--对话框面板定义 -->
+		<div id='simple_dlg_define' style='display:none'>
+			<div class='pane' style='padding:16px'>
+				<div style='padding: 10px'>
+					<span>作者:</span>
+					<input class='author' type='text' style='width: 310px'>
+				</div>
+				<div style='padding: 10px'>
+					<span>书名:</span>
+					<input class='title' type='text' style='width: 310px'>
+				</div>
+				<div style='padding: 10px; text-align: right;'>
+					<button class='primary'> 确定 </button>
+					<button> 取消 </button>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script>
+		
+		function test1()
+		{
+			layer.open({
+				type:1,
+				title:false,//不显示标题
+				area:['420px','auto'], //宽高
+				content:$('#simple_dlg_define') //窗口内容
+			});
+		}
+	</script>
+</html>

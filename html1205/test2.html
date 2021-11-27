@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		
+		<style>
+			.main{
+				width: 400px;
+				height: 50px;
+				border: 1px solid #ccc;
+				margin:50px auto;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='main'>
+			<label> 1号 </label>
+			<label> 2号 </label>
+		</div>
+		
+		<div class='main'>
+			<label> 3号 </label>
+			<label> 4号 </label>
+		</div>
+	</body>
+	
+	<script>
+		//标签类选择器 Type Selector
+		var jelist = $("label");
+		
+		for(var i= 0;i<jelist.length;i++)
+		{
+			var e= jelist[i];
+			var je=$(e);
+			console.log( je.html() );
+		}
+		
+		//另一种遍历方式
+		// for(var e of jelist)
+		// {
+		// 	var str=$(e).html();
+		// 	console.log(str);
+		// }
+		
+	</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.main{
+				width: 640;
+				height: 1000px;
+				border: 1px solid mediumblue;
+				margin: 100px;
+			}
+			
+			.div1{
+				width: 200px;
+				height: 200px;
+				background-color: #B22222;/* 半透明颜色 */
+				
+				position:fixed;
+				left:0px;
+				top:50px;
+				z-index:101;
+			}
+			
+			
+			.div2{
+				width: 100px;
+				height: 200px;
+				background-color: #ADFF2F; /*半透明颜色*/
+				
+				position:fixed;
+				right:0px;
+				bottom:50px;
+				z-index:100;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class='main'>
+			<div class='div1'>1 </div>
+			<div class='div2'>2 </div>
+		</div>
+	</body>
+</html>

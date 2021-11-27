@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	
+	<script>
+		//注意
+		//1 访问自身属性和方法时，this不能省略
+		//2 方法末尾也要加上分号
+		function Student(id, str, sex)
+		{
+			this.id = id;
+			this.name = str;
+			this.sex = sex;
+			
+			this.intruduce = function()
+			{
+				console.log("hi, I am " + this.name);
+			}; //末尾必须加上分号
+		}
+		
+		
+		function Teacher()
+		{
+			this.name = null;
+			this.start = function(){
+				console.log("上课了");
+			};//!!!!
+		}
+		
+		
+		//自定义类型的使用
+		var s = new Student(2018210463, "梓潼" ,true);
+		s.intruduce();
+		
+		var t = new Teacher();
+		t.name="somebody";
+		t.start();
+		
+		
+	</script>
+	
+	
+</html>

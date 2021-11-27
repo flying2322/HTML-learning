@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src='js/jquery-3.3.1.min.js'></script>
+		
+		<style>
+			.box1{
+				width: 200px;
+				height: 60px;
+				border: 1px solid greenyellow;
+				margin: 10px;
+				text-align: center;
+				padding: 10px;
+			}
+			.box2{
+				width: 200px;
+				height: 60px;
+				border: 1px solid #ccc;
+				background-color: lightblue;
+				margin: 10px;
+				text-align: center;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='box1'> afanihao.cn </div>
+		<div class='box2'> </div>
+		
+		<div>
+			<button onclick="test()"> Test </button>
+		</div>
+	</body>
+	
+	<script>
+		function test(){
+			//取得class=’box1‘的元素里去除HTML
+			var str = $('.box1').html();
+			
+			//设置class=’box2‘的元素的HTML
+			$(".box2").html(str);
+			
+			
+			//清空class='box1'的元素的内容
+			$(".box1").html("");
+		}
+	</script>
+</html>

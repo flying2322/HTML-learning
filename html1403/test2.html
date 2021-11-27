@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type='text/javascript' src='js/jquery-3.3.1.min.js'></script>
+		
+		<style>
+			.form select{
+				padding: 4px;
+				min-width: 120px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<button onclick="test1()"> 原生JS获取 </button>
+		</div>
+		
+		<div class='form' style='margin-top: 10px;'>
+			
+			<select class='ke'>
+				<option value='chinese'> 语文 </option>
+				<option value='math'> 数学 </option>
+				<option value='english'> 英语 </option>
+			</select>
+		</div>
+	</body>
+	
+	<script>
+		//获取文本框里的输入
+		function test1()
+		{
+			var e= $('.ke')[0];//dom元素
+			var index = e.options.selectedIndex;//索引
+			var opt=e.options[index];
+			var value=opt.value;//对应的值
+			var text = opt.text;//对应显示文本
+			console.log("选中了：" + index + ", value=" + value + ",text=" + text);
+		}
+			
+	</script>
+</html>

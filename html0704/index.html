@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			body{margin:0px}
+			#top{
+				position:fixed;
+				top: 0px;
+				z-index:101;
+				width:100%;
+				height:60px;
+				box-sizing:border-box;
+				
+				background-color: #6089D4;
+				box-shadow: 0px 2px 5px #ccc; /*偏移0 2 扩展5px的阴影*/
+			}
+			
+			#left{
+				position:fixed;
+				z-index:100;
+				top: 60px;
+				left: 0px;
+				bottom:0px;
+				
+				width:187px;
+				background-color: #FAF8F5;
+				border-right: 1px solid #D3D5D5;
+				
+			}
+			
+			#main{
+				min-height: 800px;
+				background-color: #fff;
+				margin-top:60px ; /* 高度应该和顶部高度一致 */
+				margin-left: 187px; /* 左侧应空出一段空间 */
+			}
+		</style>
+	</head>
+	<body>
+		<div id='top'></div>
+		<div id='left'></div>
+		<div id='main'>
+			111111111111 <br>
+			222222222222 <br>
+			333333333333 <br>
+			444444444444 <br>
+			555555555555 <br>
+			666666666666 <br>
+			111111111111 <br>
+			111111111111 <br>
+			111111111111 <br>
+			111111111111 <br>
+			111111111111 <br>
+			111111111111 <br>
+			111111111111 <br>
+			111111111111 <br>
+		</div>
+	</body>
+</html>

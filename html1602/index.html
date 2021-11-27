@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type='text/javascript' src='js/jquery-3.3.1.min.js'></script>
+		<script type='text/javascript' src='layer/layer.js'></script>
+		
+		<style>
+			.main{
+				margin: 20px;
+			}
+			
+			input,textarea, select{
+				padding: 4px;
+				border-radius: 4px;
+				border: 1px solid #ccc;
+				outline: none;
+				tab-size: 4;
+			}
+			
+			button{
+				padding: 4px 8px;
+				outline: none;
+				background-color: #fcfcfc;
+				border-radius: 4px;
+				border: 1px solid #ccc;
+				padding: 6px 12px;
+			}
+			
+			.primary{
+				display: inline-block;
+				background-color: #4285F4;
+				color:#fcfcfc;
+				border-radius: 4px;
+				border-width: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='main'>
+			<button onclick='test1()'> 消息 alert </button>
+			
+			<button onclick='test2()'> 提示 msg </button>
+			
+			<button onclick='test3()'> 确认 confirm </button>
+		</div>
+	</body>
+	
+	<script>
+		function test1()
+		{
+//			layer.alert('双十一全场五折');
+
+			layer.alert('双十一全场五折',{
+				title: false,
+				btn:'我知道了'
+			});
+		}
+
+		function test2()
+		{
+//			layer.msg('后台已知晓你的请求……');
+			
+			layer.msg('后台已知晓你的请求……',{
+				time:1500
+			});
+		}
+		
+		function test3(){
+			layer.confirm('你要放弃编程了吗？',
+			{
+				btn:['怎么可能', '无语']
+			},
+			function(index, layero){
+				console.log('第一个按钮');
+				layer.close(index)
+			},
+			function(){
+				console.log('第二个按钮')
+			}
+			);
+		}			
+		</script>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		
+		<style>
+			.main{
+				width: 400px;
+				height: 50px;
+				border: 1px solid #ccc;
+				margin: 50px auto;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='main box1'>
+			<label class='mark'> xxx </label>
+		</div>
+		<div class='main box2'>
+			<label class='mark'> yyy </label>
+		</div>
+	</body>
+	
+	
+	<script>
+		//子选择器 .box2 .name表示在class="box1"下找class=‘name’的节点
+		console.log ($(".box1 .mark").html() );
+		
+		console.log ($(".box2 .mark").html() );
+	</script>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type='text/javascript' src='layer/layer.js'></script>
+		
+		<style>
+			.main{
+				margin: 20px;
+			}
+			
+			/* 表格样式 */
+			table{
+				border-collapse: collapse;
+				table-layout: fixed;
+				word-break: break-all;
+				word-wrap: break-word;
+			}
+			
+			/* 逗号表示同时指定多个目标的样式 */
+			table,td,th{
+				border:1px solid #e1e1e1;
+				text-align:center;
+			}
+			
+			input,textarea, select{
+				padding: 4px;
+				border-radius: 4px;
+				border: 1px solid #ccc;
+				outline: none;
+				tab-size: 4;
+			}
+			
+			button{
+				padding: 4px 8px;
+				outline: none;
+				background-color: #fcfcfc;
+				border-radius: 4px;
+				border: 1px solid #ccc;
+				padding: 6px 12px
+			}
+			.primary{
+				display: inline-block;
+				background-color: #4285F4;
+				color:#fcfcfc;
+				border-radius: 4px;
+				border-width: 0px;
+			}
+			
+			/* 图片格式定义 */
+			.booklist{
+				width: 600px;
+				margin: 10px 0;
+			}
+			.booklist .c1{
+				width: 100px;
+				padding: 6px;
+			}
+			.booklist .c2{
+				width: calc(100% - 100px);
+				padding: 6px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class='main'>
+			<button onclick='add()' class='primary'> 创建 </button>
+			
+			<table class='booklist'>
+				<tr style='background-color:#f1f1f1; color: #666;'>
+					<td class='c1'> 标题 </td>
+					<td class='c2'> 书名 </td>
+				</tr>
+			</table>
+		</div>
+		
+		<!-- 对话框面板定义 -->
+		<div class='simple_dlg_define' style='display:none'>
+			<div class='pane' style='padding: 16px'>
+				<div style='padding: 10px'>
+					<span>作者:</span>
+					<input class='author' type='text' style='width: 310px'>
+				</div>
+				<div style='padding: 10px'>
+					<span>书名:</span>
+					<input class='title' type='text' style='width: 310px'>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	
+	<script>
+		function add(){
+			
+			var dlgContent=$('.simple_dlg_define').html();//窗口内容
+			
+			layer.open({
+				type:1,
+				title: '添加记录',
+				area: ['420px', 'auto'],
+				content:dlgContent,
+				btn:['Confirm','Cancel'],
+				
+				btn1: function(index,layero){
+					var author = $('.author', layero).val().trim();
+					var title = $('.title', layero).val().trim();
+					console.log('作者:' + author + ',书名' + title);
+					addToTable(author,title);
+					
+					//关闭对话框
+					layer.close(index);
+				},
+				btn2 : function(index,layero){
+					layer.close(index)
+				}
+			});
+		}
+		
+		function addToTable(author,title){
+			var str="<tr>"
+				+ "<td class='c1' > ##1 </td>"
+				+ "<td class='c2' > ##2 </td>"
+				+ "</tr>";
+				//替换##1为author，替换##2为title
+				str=str.replace(/##1/g, author).replace(/##2/g, title);
+				
+				$('.booklist').append(str);
+		}
+	</script>
+</html>
